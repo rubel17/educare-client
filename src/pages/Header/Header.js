@@ -15,7 +15,6 @@ const Header = () => {
   };
 
   const handleClick = () => {
-    console.log('ok')
     setIsActive(current => !current);
   };
 
