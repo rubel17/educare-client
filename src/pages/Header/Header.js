@@ -1,18 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../contexts/UserContext';
 
 const Header = () => {
   const {user, logOut} = useContext(AuthContext);
-  // console.log(user.photoURL);
+  const [isActive, setIsActive] = useState(false);
 
   const handleSignOut = () =>{
     logOut()
     .then(() => {
             
     }).catch((error) =>console.error(error));
-  }
+  };
+
+  const handleClick = () => {
+    console.log('ok')
+    setIsActive(current => !current);
+  };
+
+
 
     return (
         <div className="navbar bg-info">
@@ -40,17 +47,22 @@ const Header = () => {
               <li><Link to='/courses'>Courses</Link></li>
               <li><Link to='/faq'>FAQ</Link></li>
               <li><Link to='/blog'>Blog</Link></li>
-              <li><Link>Theme</Link></li>
+
+              <li><Link   style={{color: isActive ? 'white' : 'black',}}
+                    onClick={handleClick}
+                    >ChangeTheme</Link></li>
+
               <li><Link to='/account'>Account</Link></li>
               <li><Link to='/checkout'>CheckOut</Link></li>
-
           </ul>
+
+
           {
             user?.uid? <button onClick={handleSignOut} className="btn btn-xs">SignOut</button>
             :
             <Link to='register'><button className="ml-4 btn btn-xs">Register Now</button></Link>
           }
-          
+
 
         </div>
         <div className="navbar-end">
