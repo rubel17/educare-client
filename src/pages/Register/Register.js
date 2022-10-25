@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { AuthContext } from '../../contexts/UserContext';
 
 const Register = () => {
-    const { createUser, googleSignIn } = useContext(AuthContext);
+    const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -32,6 +32,16 @@ const Register = () => {
             console.log(user);
         })
         .catch(err => console.error(err));
+    };
+
+    const handleGithubSignIn = () =>{
+        githubSignIn()
+        .then(res =>{
+            const user = res.user;
+            console.log(user);
+            navigate(from, {replace: true})
+        })
+        .catch(err => console.error(err));
     }
 
     return (
@@ -42,7 +52,7 @@ const Register = () => {
             <p className="py-6">You uses the Educare website for learning, Please create a new Account,otherwise login your Account.</p>
 
             <button onClick={handleGoogleSignIn } className="btn btn-outline btn-info mr-4">Google Sign In</button>
-            <button className="btn btn-outline btn-success"> Github Sign In</button>
+            <button onClick={handleGithubSignIn } className="btn btn-outline btn-success"> Github Sign In</button>
 
 
            

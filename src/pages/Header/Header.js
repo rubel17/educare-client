@@ -45,9 +45,9 @@ const Header = () => {
 
           </ul>
           {
-            user?.email? <button onClick={handleSignOut} className="btn btn-xs">SignOut</button>
+            user?.uid? <button onClick={handleSignOut} className="btn btn-xs">SignOut</button>
             :
-            <Link to='register'><button className="ml-4 btn btn-xs">Register</button></Link>
+            <Link to='register'><button className="ml-4 btn btn-xs">Register Now</button></Link>
           }
           
 
