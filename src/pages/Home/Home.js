@@ -10,18 +10,25 @@ const Home = () => {
             </h3>
 
            <div className='flex justify-around'>
-           <p>Profile Name: <strong className='text-error text-xl'>{user.displayName}</strong></p>
-            <h4>
+           <p>Profile Name: 
+            {
+              user?.uid? <strong className='text-error text-xl'>{user?.displayName}</strong> :
+              <strong>  No Name..(Input)</strong>
+            }
+           </p>
+            <h4> Profile Email: 
               {user?.email?
-                <div>Profile Email: <strong className='text-error text-xl'>{user.email}</strong></div>
+                <strong className='text-error text-xl'>{user?.email}</strong>
              :
-                <div><img src={user.photoURL} alt="" /></div>}
+                
+                  <strong>No Mail..(Login Now)</strong>
+                }
              </h4>
            </div>
 
 
              <div>
-                <img style={{height: '650px'}} className='w-full' src={user.photoURL} alt="" />
+                <img style={{height: '650px'}} className='w-full' src={user?.photoURL} alt="" />
              </div>
         </div>
     );

@@ -5,6 +5,7 @@ import Blog from "../../pages/Blog/Blog";
 import CheckOut from "../../pages/CheckOut/CheckOut";
 import CourseDitails from "../../pages/CourseDitails/CourseDitails";
 import Courses from "../../pages/Courses/Courses";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import Faq from "../../pages/Faq/Faq";
 import Home from "../../pages/Home/Home";
 import Register from "../../pages/Register/Register";
@@ -18,7 +19,7 @@ export const routers = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<PrivateRoute><Home></Home></PrivateRoute>
+                element:<Home></Home>
             },
             {
                 path:'/courses',
@@ -27,6 +28,10 @@ export const routers = createBrowserRouter([
             {
                 path:'/coursedetails',
                 element:<CourseDitails></CourseDitails>
+            },
+            {
+                path:'/checkout',
+                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
             {
                 path:'/faq',
@@ -43,12 +48,13 @@ export const routers = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
-            },
-            {
-                path:'/checkout',
-                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             }
+           
         ]
+    },
+    {
+        path:'*',
+        element:<ErrorPage></ErrorPage>
     }
 
 ])

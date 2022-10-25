@@ -20,14 +20,14 @@ const Account = () => {
         .then(result =>{
             const newUser = result.user
                 console.log(newUser);
-                form.reset();
+                
                 setError('');
-                navigate(from, {replace: true})
+                navigate(from, {replace: true});
+                form.reset();
         })
         .catch(err=>{
             console.error(err.message)
             setError(`${err.message} Email Address or Password doesn't Match.`);
-
         })
     };
 

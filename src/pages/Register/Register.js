@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { AuthContext } from '../../contexts/UserContext';
 
 const Register = () => {
+  const [error, setError] = useState('')
     const { createUser, googleSignIn, githubSignIn, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,7 +25,10 @@ const Register = () => {
                 handleUpdateUserProfile(name, photoURL);
                 navigate(from, {replace: true})
         })
-        .catch(err=>console.log(err));
+        .catch(err=>{
+          console.log(err)
+          setError(`${err.message} Input Valid Email And Password`);
+        });
     };
 
     const handleGoogleSignIn = () =>{
@@ -99,6 +103,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
+                {error}
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
