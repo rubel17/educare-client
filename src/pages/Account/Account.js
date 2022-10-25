@@ -25,8 +25,8 @@ const Account = () => {
                 navigate(from, {replace: true})
         })
         .catch(err=>{
-            console.log(err)
-            setError(err.message);
+            console.error(err.message)
+            setError(`${err.message} Email Address or Password doesn't Match.`);
 
         })
     };
