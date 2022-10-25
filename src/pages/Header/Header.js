@@ -22,11 +22,11 @@ const Header = () => {
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-info rounded-box w-52">
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='courses'>Courses</Link></li>
-              <li><Link to='faq'>FAQ</Link></li>
-              <li><Link to='blog'>Blog</Link></li>
+              <li><Link to='/courses'>Courses</Link></li>
+              <li><Link to='/faq'>FAQ</Link></li>
+              <li><Link to='/blog'>Blog</Link></li>
               <li><Link>Theme</Link></li>
-              <li><Link to='account'>Account</Link></li>
+              <li><Link to='/account'>Account</Link></li>
               
             </ul>
           </div>
@@ -36,11 +36,12 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='courses'>Courses</Link></li>
-              <li><Link to='faq'>FAQ</Link></li>
-              <li><Link to='blog'>Blog</Link></li>
+              <li><Link to='/courses'>Courses</Link></li>
+              <li><Link to='/faq'>FAQ</Link></li>
+              <li><Link to='/blog'>Blog</Link></li>
               <li><Link>Theme</Link></li>
-              <li><Link to='account'>Account</Link></li>
+              <li><Link to='/account'>Account</Link></li>
+              <li><Link to='/checkout'>CheckOut</Link></li>
 
           </ul>
           {
@@ -53,10 +54,10 @@ const Header = () => {
         </div>
         <div className="navbar-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 mr-4 rounded-full">
+        <div className="w-10 rounded-full">
         {user?.email?
           <small >{user?.email}</small>:
-            <Link to='account'><button className="mr-4 h-10 btn btn-xs">Log In</button></Link>
+            <Link to='account'><button className=" h-10 btn btn-xs">Log In</button></Link>
             
           }
 

@@ -1,24 +1,28 @@
 import React,  { useContext } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from '../../contexts/UserContext';
 
 const Account = () => {
-    const {logInUser} = useContext(AuthContext)
+    const {logInUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        const from = event.target;
-        const name = from.name.value;
-        const email = from.email.value;
-        const password = from.password.value;
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
         console.log(name, email,password)
         logInUser(email, password)
         .then(result =>{
             const newUser = result.user
                 console.log(newUser);
+                form.reset();
+                navigate(from, {replace: true})
         })
-        .catch(err=>console.log(err));
-        from.reset();
+        .catch(err=>console.log(err))
     }
     
 
@@ -28,6 +32,9 @@ const Account = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">Login Your valid Account with Your Email address and Password</p>
+            <button className="btn btn-outline btn-info mr-4">Google Sign In</button>
+            <button className="btn btn-outline btn-success"> Github Sign In</button>
+
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit} className="card-body">
