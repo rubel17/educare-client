@@ -5,7 +5,7 @@ const Home = () => {
     const {user} =useContext(AuthContext);
     return (
         <div className='bg-success'>
-            <h3 className='text-bold text-xl'>This
+            <h3 className='text-bold text-center text-xl'>This
                 is "Dynamic" Home Page
             </h3>
 
