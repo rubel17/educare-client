@@ -55,8 +55,8 @@ const Header = () => {
         <div className="navbar-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-        {user?.email?
-          <small >{user?.email}</small>:
+        {user?.photoURL?
+          <img src={user.photoURL} alt="" className='h-10 rounded-full' /> :
             <Link to='account'><button className=" h-10 btn btn-xs">Log In</button></Link>
             
           }
