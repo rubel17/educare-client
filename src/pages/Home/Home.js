@@ -4,16 +4,25 @@ import { AuthContext } from '../../contexts/UserContext';
 const Home = () => {
     const {user} =useContext(AuthContext);
     return (
-        <div>
-            <h3>This
-                is home
+        <div className='bg-success'>
+            <h3 className='text-bold text-xl'>This
+                is "Dynamic" Home Page
             </h3>
-            <h4>{user?.email?
-             <div>{user.email}</div>
-             :
-             <div><img src={user.photoURL} alt="" /></div> 
 
-             }</h4>
+           <div className='flex justify-around'>
+           <p>Profile Name: <strong className='text-error text-xl'>{user.displayName}</strong></p>
+            <h4>
+              {user?.email?
+                <div>Profile Email: <strong className='text-error text-xl'>{user.email}</strong></div>
+             :
+                <div><img src={user.photoURL} alt="" /></div>}
+             </h4>
+           </div>
+
+
+             <div>
+                <img style={{height: '650px'}} className='w-full' src={user.photoURL} alt="" />
+             </div>
         </div>
     );
 };

@@ -1,8 +1,9 @@
-import React,  { useContext } from 'react';
+import React,  { useContext, useState } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from '../../contexts/UserContext';
 
 const Account = () => {
+  const [error, setError] = useState('');
     const {logInUser, googleSignIn,githubSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,9 +21,14 @@ const Account = () => {
             const newUser = result.user
                 console.log(newUser);
                 form.reset();
+                setError('');
                 navigate(from, {replace: true})
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{
+            console.log(err)
+            setError(err.message);
+
+        })
     };
 
     const handleGoogleSignIn = () =>{
@@ -76,6 +82,9 @@ const Account = () => {
               </div>
               <Link to='/register'  className="text-error label-text-alt link link-hover">Create a new account?</Link>
               <div className="form-control mt-6">
+               <div className='text-error mb-4'> 
+               {error}
+               </div>
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
