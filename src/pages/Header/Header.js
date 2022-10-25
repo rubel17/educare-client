@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
+import { AuthContext } from '../../contexts/UserContext';
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleSignOut = () =>{
+    logOut()
+    .then(() => {
+            
+    }).catch((error) =>console.error(error));
+  }
+
     return (
         <div className="navbar bg-info">
         <div className="navbar-start">
@@ -17,10 +27,11 @@ const Header = () => {
               <li><Link to='blog'>Blog</Link></li>
               <li><Link>Theme</Link></li>
               <li><Link to='account'>Account</Link></li>
+              
             </ul>
           </div>
           <AcademicCapIcon className="mr-3 h-8 w-8 text-blue-500"/>
-          <Link className='text-lg primary'>Educare</Link>
+          <Link to='/' className='text-lg primary'>Educare</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -30,18 +41,27 @@ const Header = () => {
               <li><Link to='blog'>Blog</Link></li>
               <li><Link>Theme</Link></li>
               <li><Link to='account'>Account</Link></li>
+
           </ul>
+          {
+            user?.email? <button onClick={handleSignOut} className="btn btn-xs">SignOut</button>
+            :
+            <Link to='register'><button className="ml-4 btn btn-xs">Register</button></Link>
+          }
+          
+
         </div>
         <div className="navbar-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          
-
-        {
-
-        }
+        <div className="w-10 mr-4 rounded-full">
+        {user?.email?
+          <small >{user?.email}</small>:
+            <Link to='account'><button className="mr-4 h-10 btn btn-xs">Log In</button></Link>
+            
+          }
 
         </div>
+        
       </label>
         </div>
       </div>
