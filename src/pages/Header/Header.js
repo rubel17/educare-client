@@ -62,14 +62,17 @@ const Header = () => {
             <Link to='register'><button className="ml-4 btn btn-xs">Register Now</button></Link>
           }
 
-
         </div>
         <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
+        <label tabIndex={0} className="btn btn-ghost btn-circle">
+        <div data-tip=
+              {
+                user?.displayName? user.displayName: "No Display Name"
+              } 
+        className="tooltip tooltip-left w-10 rounded-full">
         {user?.photoURL?
           <img src={user.photoURL} alt="" className='h-10 rounded-full' /> :
-            <Link to='account'><button className=" h-10 btn btn-xs">Log In</button></Link>
+            <Link to='account'><button className="h-10 btn btn-circle">Log In</button></Link>
             
           }
 

@@ -34,8 +34,8 @@ const Register = () => {
     const handleGoogleSignIn = () =>{
         googleSignIn()
         .then(res =>{
-            const user = res.user;
-            console.log(user);
+            // const user = res.user;
+            // console.log(user);
         })
         .catch(err => console.error(err));
     };
