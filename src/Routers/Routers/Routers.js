@@ -24,20 +24,20 @@ export const routers = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses></Courses>,
-                loader:() => fetch('http://localhost:5000/allCourses'),
+                loader:() => fetch('https://educare-server3.vercel.app/allCourses'),
             },
             {
                 path:'/coursedetails/:id',
                 element:<CourseDitails></CourseDitails>,
                 loader:({params}) =>{
-                    return fetch(`http://localhost:5000/course/${params.id}`)
+                    return fetch(`https://educare-server3.vercel.app/${params.id}`)
                   },
             },
             {
                 path:'/checkout/:id',
                 element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader:({params}) =>{
-                    return fetch(`http://localhost:5000/course/${params.id}`)
+                    return fetch(`https://educare-server3.vercel.app/${params.id}`)
                   },
             },
             {

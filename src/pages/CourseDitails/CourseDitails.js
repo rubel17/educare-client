@@ -19,7 +19,7 @@ const CourseDitails = () => {
       }
       </p>
       <p className="py-6">{description}</p>
-      <button className="btn btn-primary"><Link to={`/checkout/${course.id}`}>Admission Checkout</Link></button>
+      <button className="btn btn-primary"><Link to={`/checkout/${course.id}`}>Checkout</Link></button>
     </div>
   </div>
 </div>
