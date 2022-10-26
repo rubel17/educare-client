@@ -11,7 +11,7 @@ const Course = ({course}) => {
                 <h2 className="card-title">{courseName}</h2>
                 <p>{courseBody }</p>
                 <div className="card-actions justify-end">
-                <button className="btn btn-primary mt-0"> <Link to={`/coursedetails/${course.id}`}>Admission</Link></button>
+                <button className="btn btn-primary mt-0"> <Link to={`/coursedetails/${course.id}`}>Choice Subject </Link></button>
                 </div>
             </div>
             </div>

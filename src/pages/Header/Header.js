@@ -52,7 +52,7 @@ const Header = () => {
                     >ChangeTheme</Link></li>
 
               <li><Link to='/account'>Account</Link></li>
-              <li><Link to='/checkout'>CheckOut</Link></li>
+              <li><Link to='/coursedetails/:id'>CourseDetails</Link></li>
           </ul>
 
 

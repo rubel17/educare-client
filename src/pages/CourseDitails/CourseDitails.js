@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDitails = () => {
     const course  = useLoaderData();
@@ -12,9 +12,14 @@ const CourseDitails = () => {
     <img src={image} className="sm:w-max lg:rounded shadow-2xl" alt="" />
     <div>
       <h1 className="text-5xl font-bold">{courseName}</h1>
-      <p className="py-6">{courseBody}</p>
+      <p className="py-6">{courseBody?courseBody 
+      :
+      <strong className='text-2xl text-purple-400'>'Please Visit Courses Page First'<Link to='/courses' className=" ml-3 btn btn-warning">Courses</Link> </strong>
+
+      }
+      </p>
       <p className="py-6">{description}</p>
-      <button className="btn btn-primary">Get Started</button>
+      <button className="btn btn-primary"><Link to={`/checkout/${course.id}`}>Admission Checkout</Link></button>
     </div>
   </div>
 </div>
