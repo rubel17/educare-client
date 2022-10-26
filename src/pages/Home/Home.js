@@ -9,10 +9,10 @@ const Home = () => {
                 is "Dynamic" Home Page
             </h3>
 
-           <div className='flex justify-around'>
+           <div className='sm:ml-10 lg:flex lg:justify-around'>
            <p>Profile Name: 
             {
-              user?.uid? <strong className='text-error text-xl'>{user?.displayName}</strong> :
+              user?.displayName? <strong className='text-error text-xl'>{user?.displayName}</strong> :
               <strong>  No Name..(Input)</strong>
             }
            </p>

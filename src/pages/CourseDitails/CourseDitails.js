@@ -1,9 +1,23 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const CourseDitails = () => {
+    const course  = useLoaderData();
+    const {image, courseName, courseBody, description} =course;
+    console.log("courses detail page",course)
     return (
         <div>
-            <h2>this is course Ditails page</h2>
+            <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <img src={image} className="sm:w-max lg:rounded shadow-2xl" alt="" />
+    <div>
+      <h1 className="text-5xl font-bold">{courseName}</h1>
+      <p className="py-6">{courseBody}</p>
+      <p className="py-6">{description}</p>
+      <button className="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
         </div>
     );
 };
