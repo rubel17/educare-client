@@ -1,26 +1,41 @@
-## Learning website.
+### Website(Project) Name.
 
-$ my name dolar
-$my name dolar
+- Educare
 
-- my
-- chai
-- khai
-- day
+## Website Live Link.
 
-* koi
-* ay
-* ai je
+- URL:
 
-* hi hipen
-  -oh hipen
+## Project Description.
 
-1. number
-   1. number
+- This is University learning Web-site.
+- Only Engineering Faculty(Subject).
+- Courses offered by the departments help students to analyze scientific information critically and to understand the engineering world in a scientific fashion.
+- Our Faculty offers undergraduate courses leading to Bachelor of Science in Engineering degree.
+- It is one of the oldest faculties of the university with all the state-of-the-art facilities.
 
-- my ster
+# Admission Going On (Subject)
 
-* my staraaa
+- Computer Science And Engineering
+- Software engineering
+- Civil engineering
+- Electrical and Electronics Engineering
+- Electronics and Communications Engineering
+- B.Pharmacy
 
-> arrow
-> arrow
+## Technologies use and Installation.
+
+- React.
+- React Router.
+- Firebase.
+- Node Js(express js).
+- Nodemon.
+- Hero icons.
+- Tailwind css.
+- daisy ui.
+
+### Authentication system(Login).
+
+- Email And Password (create User).
+- Google signIn.
+- Github signIn.
