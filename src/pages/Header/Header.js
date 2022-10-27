@@ -32,9 +32,9 @@ const Header = () => {
               <li><Link to='/courses'>Courses</Link></li>
               <li><Link to='/faq'>FAQ</Link></li>
               <li><Link to='/blog'>Blog</Link></li>
-              <li><Link>Theme</Link></li>
+              <li><Link>ChangeTheme</Link></li>
               <li><Link to='/account'>Account</Link></li>
-              
+              <li><Link to="/check">PrintPDF</Link></li>
             </ul>
           </div>
           <AcademicCapIcon className="mr-3 h-8 w-8 text-blue-500"/>
@@ -52,7 +52,7 @@ const Header = () => {
                     >ChangeTheme</Link></li>
 
               <li><Link to='/account'>Account</Link></li>
-              <li><Link to='/coursedetails/:id'>CourseDetails</Link></li>
+              <li><Link to="/check">PrintPDF</Link></li>
           </ul>
 
 
@@ -70,11 +70,14 @@ const Header = () => {
                 user?.displayName? user.displayName: "No Display Name"
               } 
         className="tooltip tooltip-left w-10 rounded-full">
-        {user?.photoURL?
-          <img src={user.photoURL} alt="" className='h-10 rounded-full' /> :
-            <Link to='account'><button className="h-10 btn btn-circle">Log In</button></Link>
-            
-          }
+        {   user?.photoURL?
+              <div>
+                <Link to='/profile'><img src={user.photoURL} alt="" className='h-10 rounded-full' /></Link>
+                
+              </div>
+               :
+              <Link to='account'><button className="h-10 btn btn-circle">Log In</button></Link>
+        }
 
         </div>
         

@@ -13,7 +13,7 @@ const Home = () => {
            <p>Profile Name: 
             {
               user?.displayName? <strong className='text-error text-xl'>{user?.displayName}</strong> :
-              <strong>  No Name..(Input)</strong>
+              <strong>  No Name..</strong>
             }
            </p>
             <h4> Profile Email: 
@@ -21,7 +21,7 @@ const Home = () => {
                 <strong className='text-error text-xl'>{user?.email}</strong>
              :
                 
-                  <strong>No Mail..(Login Now)</strong>
+                  <strong>No Mail..</strong>
                 }
              </h4>
            </div>
