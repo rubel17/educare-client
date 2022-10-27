@@ -6,7 +6,7 @@
 
 - LiveURL: https://educare-e4e4b.web.app/
 - ServerURL: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-RubelRk
-- ClientURL: https://github.com/programming-hero-web-course1/b610-learning-platform
+- ClientURL: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-RubelRk
 
 ## Project Description.
 

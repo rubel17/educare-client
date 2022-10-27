@@ -49,7 +49,7 @@ const Header = () => {
 
               <li><Link   style={{color: isActive ? 'white' : 'black',}}
                     onClick={handleClick}
-                    >ChangeTheme</Link></li>
+                    >ChangeColor</Link></li>
 
               <li><Link to='/account'>Account</Link></li>
               <li><Link to="/check">PrintPDF</Link></li>
